@@ -26,7 +26,7 @@ const _knownOpenAIChatModels: ManualMappings = [
     label: 'GPT-4 Turbo (0125)',
     description: 'The latest GPT-4 model intended to reduce cases of “laziness” where the model doesn’t complete a task.',
     contextWindow: 128000,
-    maxCompletionTokens: 32768,
+    maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
     isLatest: true,
   },
@@ -46,7 +46,7 @@ const _knownOpenAIChatModels: ManualMappings = [
     hidden: true,
     // copied
     contextWindow: 128000,
-    maxCompletionTokens: 32768,
+    maxCompletionTokens: 4096,
     interfaces: [LLM_IF_OAI_Chat, LLM_IF_OAI_Fn],
   },
 
