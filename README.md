@@ -231,3 +231,5 @@ Create your GitHub fork, create a Vercel project over that fork, and deploy it. 
 ---
 
 2023-2024 · Enrico Ros x [big-AGI](https://big-agi.com) · License: [MIT](LICENSE) · Made with 💙
+
+bump v1
