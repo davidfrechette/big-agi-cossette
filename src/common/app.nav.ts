@@ -1,8 +1,8 @@
 import type { FunctionComponent } from 'react';
 
 // App icons
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
+import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import CallIcon from '@mui/icons-material/Call';
@@ -10,8 +10,9 @@ import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import Diversity2Icon from '@mui/icons-material/Diversity2';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import EventNoteOutlinedIcon from '@mui/icons-material/EventNoteOutlined';
-import FormatPaintIcon from '@mui/icons-material/FormatPaint';
 import FormatPaintOutlinedIcon from '@mui/icons-material/FormatPaintOutlined';
+import FormatPaintTwoToneIcon from '@mui/icons-material/FormatPaintTwoTone';
+import GrainIcon from '@mui/icons-material/Grain';
 import ImageIcon from '@mui/icons-material/Image';
 import ImageOutlinedIcon from '@mui/icons-material/ImageOutlined';
 import IosShareIcon from '@mui/icons-material/IosShare';
@@ -110,7 +111,7 @@ export const navItems: {
       name: 'Draw',
       barTitle: 'Generate Images',
       icon: FormatPaintOutlinedIcon,
-      iconActive: FormatPaintIcon,
+      iconActive: FormatPaintTwoToneIcon,
       type: 'app',
       route: '/draw',
       // hideOnMobile: true,
@@ -130,7 +131,7 @@ export const navItems: {
     {
       name: 'Patterns',
       icon: AccountTreeOutlinedIcon,
-      iconActive: AccountTreeIcon,
+      iconActive: AccountTreeTwoToneIcon,
       type: 'app',
       route: '/patterns',
       isDev: true,
@@ -161,6 +162,13 @@ export const navItems: {
       type: 'app',
       route: '/personas',
       hideBar: true,
+    },
+    {
+      name: 'Tokenize',
+      icon: GrainIcon,
+      type: 'app',
+      route: '/tokens',
+      hideDrawer: true,
     },
     {
       name: 'Beam',
