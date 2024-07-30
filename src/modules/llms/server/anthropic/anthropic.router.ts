@@ -8,7 +8,7 @@ import { fetchJsonOrTRPCError } from '~/server/api/trpc.router.fetchers';
 import { fixupHost } from '~/common/util/urlUtils';
 
 import { OpenAIHistorySchema, openAIHistorySchema, OpenAIModelSchema, openAIModelSchema } from '../openai/openai.router';
-import { llmsChatGenerateOutputSchema, llmsListModelsOutputSchema } from '../llm.server.types';
+import { llmsChatGenerateOutputSchema, llmsGenerateContextSchema, llmsListModelsOutputSchema } from '../llm.server.types';
 
 import { AnthropicWireMessagesRequest, anthropicWireMessagesRequestSchema, AnthropicWireMessagesResponse, anthropicWireMessagesResponseSchema } from './anthropic.wiretypes';
 import { hardcodedAnthropicModels } from './anthropic.models';
@@ -17,7 +17,9 @@ import { hardcodedAnthropicModels } from './anthropic.models';
 // Default hosts
 const DEFAULT_API_VERSION_HEADERS = {
   'anthropic-version': '2023-06-01',
-  'anthropic-beta': 'messages-2023-12-15',
+  // Former Betas:
+  // - messages-2023-12-15: to use the Messages API
+  'anthropic-beta': 'max-tokens-3-5-sonnet-2024-07-15',
 };
 const DEFAULT_MAX_TOKENS = 2048;
 const DEFAULT_ANTHROPIC_HOST = 'api.anthropic.com';
@@ -158,7 +160,11 @@ const listModelsInputSchema = z.object({
 
 const chatGenerateInputSchema = z.object({
   access: anthropicAccessSchema,
-  model: openAIModelSchema, history: openAIHistorySchema,
+  model: openAIModelSchema,
+  history: openAIHistorySchema,
+  // functions: openAIFunctionsSchema.optional(),
+  // forceFunctionName: z.string().optional(),
+  context: llmsGenerateContextSchema.optional(),
 });
 
 
